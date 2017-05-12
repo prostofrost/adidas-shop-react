@@ -1,0 +1,26 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #0e0e0e;
+  padding: 18px 0 18px 20px;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+@media only screen and (min-width: 768px) {
+  .sidebar {
+    position: relative;
+    height: inherit;
+    text-align: center;
+    padding: 50px 0 0;
+    flex: 0 0 30%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .sidebar {
+    flex: 0 0 414px;
+  }
+}

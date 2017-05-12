@@ -1,0 +1,42 @@
+.search {
+  display: none;
+  padding: 0 22px;
+  position: relative;
+}
+
+.search .i-search {
+  width: 28px;
+  height: 30px;
+  display: inline-block;
+  margin-right: -30px;
+  position: relative;
+  z-index: 10;
+}
+
+.search input {
+  font-size: 24px;
+  text-transform: uppercase;
+  background: transparent;
+  border-width: 0 0 4px;
+  border-style: solid;
+  border-color: #373737;
+  color: #3a3a3a;
+  padding: 0 0 10px 55px;
+  width: 100%;
+  box-sizing: border-box;
+  background: url("./search.svg") 10px 0 no-repeat;
+  transition: all 0.3s ease;
+}
+
+.search input:focus {
+  border-color: #dcdcdc;
+}
+
+@media only screen and (min-width: 768px) {
+  .search {
+    display: block;
+  }
+  .search-m {
+    margin-bottom: 150px;
+  }
+}

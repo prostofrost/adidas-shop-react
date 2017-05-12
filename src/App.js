@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import Content from './Content';
-
-import './App.css';
+import Sidebar from './Sidebar';
+import List from './List';
+import Product from './Product';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header />
-        <Content />
+      <div className="main-container">
+        <Sidebar />
+        <section className="wrapper">
+          <List />
+          {/*<Product />*/}
+        </section>
       </div>
     );
   }

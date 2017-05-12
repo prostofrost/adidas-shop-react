@@ -1,0 +1,92 @@
+.filter {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.filter button {
+  border: none;
+  padding: 0;
+}
+
+.filter-m {
+  margin: 0 0 15px;
+}
+
+.filter-switch {
+  display: none;
+  width: 55px;
+  height: 55px;
+  padding-top: 8px;
+  background: #ebebeb;
+}
+
+.filter-switch .i-filter {
+  fill: #4d42f8;
+  width: 40px;
+  height: 33px;
+  padding-top: 5px;
+}
+
+.filter-gender button,
+.filter-gender .filter-size-label,
+.filter-size button,
+.filter-size .filter-size-label {
+  background: none;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #d6d6d6;
+  transition: all 0.4s ease;
+}
+
+.filter-gender .active,
+.filter-gender :hover,
+.filter-size .active,
+.filter-size :hover {
+  color: #4d42f8;
+}
+
+.filter-gender .filter-size-label,
+.filter-size .filter-size-label {
+  display: inline-block;
+  color: #4d42f8;
+  margin-right: 15px;
+}
+
+.filter-gender button {
+  margin-right: 15px;
+}
+
+.filter-gender-m {
+  margin: 0 0 15px;
+}
+
+.filter-size button {
+  padding: 0 8px 0 0;
+}
+
+@media only screen and (min-width: 880px) {
+  .filter {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  .filter-gender-m {
+    margin: 0 35px 0 0;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .filter-switch {
+    display: block;
+  }
+  .filter-gender-m {
+    margin: 0 35px 0 20px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .filter-gender-m {
+    margin: 0 65px 0 20px;
+  }
+}

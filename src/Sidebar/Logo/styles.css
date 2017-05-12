@@ -1,0 +1,12 @@
+.logo img {
+  width: 40px;
+}
+
+@media only screen and (min-width: 768px) {
+  .logo {
+    margin-bottom: 40px;
+  }
+  .logo img {
+    width: inherit;
+  }
+}
