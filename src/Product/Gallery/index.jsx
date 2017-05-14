@@ -7,7 +7,7 @@ export default () => (
       <img src={require('./shoes-3@3x.jpg')} alt="Adidas Utra Boost" />
     </BigImg>
     <Thumbnails>
-      <Item active>
+      <Item isActive>
         <img
           src={require('./shoes-3-thumb1.jpg')}
           srcSet={`${require('./shoes-3-thumb1@2x.jpg')} 2x`}
