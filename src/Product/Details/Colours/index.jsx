@@ -1,10 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Colours = styled.div`
-  margin-right: 5px;
-`;
-
 const Button = styled.button`
   width: 20px;
   height: 20px;
@@ -21,10 +17,10 @@ const Button = styled.button`
 `;
 
 export default () => (
-  <Colours>
+  <div>
     <Button color="#c5c5c5" />
     <Button color="#4d87ca" />
     <Button color="#4a4a4a" />
     <Button color="#e0e0e0" />
-  </Colours>
+  </div>
 );
