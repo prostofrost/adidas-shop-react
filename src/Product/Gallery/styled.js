@@ -46,7 +46,7 @@ export const Item = styled.div`
   &:hover {
     outline: 5px solid #e5e5e7;
   }
-  ${props => props.active && `
+  ${props => props.isActive && `
     outline: 5px solid #e5e5e7;
   `};
 `;

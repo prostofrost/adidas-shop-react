@@ -41,22 +41,12 @@ body {
   display: none;
 }
 
-.wrapper {
-  padding-top: 70px;
-  overflow: auto;
-}
-
 @media only screen and (min-width: 768px) {
   .no-desktop-768 {
     display: none;
   }
   .no-mobile {
     display: block;
-  }
-  .wrapper {
-    padding-top: 0;
-    flex: 1 1 auto;
-    overflow: auto;
   }
 }
 

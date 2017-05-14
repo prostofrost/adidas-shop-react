@@ -8,7 +8,7 @@ export default () => (
     </Icon>
 
     <Gender>
-      <Item active>Man</Item>
+      <Item isActive>Man</Item>
       <Item>Woman</Item>
     </Gender>
 
@@ -19,7 +19,7 @@ export default () => (
       <Item>38</Item>
       <Item>39</Item>
       <Item>40</Item>
-      <Item active>41</Item>
+      <Item isActive>41</Item>
       <Item>42</Item>
     </Size>
   </Filters>

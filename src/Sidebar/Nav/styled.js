@@ -19,7 +19,7 @@ export const Item = styled.div`
 export const Link = styled.a`
   text-decoration: none;
   transition: all 0.4s ease;
-  color: ${props => (props.active ? '#fff' : '#3c3c3c')};
+  color: ${props => (props.isActive ? '#fff' : '#3c3c3c')};
   &:hover {
     color: #fff;
   }
