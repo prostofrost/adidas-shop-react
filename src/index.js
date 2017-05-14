@@ -1,9 +1,9 @@
-// eslint-disable react/jsx-filename-extension
+/* eslint-disable react/jsx-filename-extension */
 
-import '../node_modules/normalize.css/normalize.css';
-import './styles.css';
+import 'normalize.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import './styles.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
