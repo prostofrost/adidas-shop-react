@@ -1,8 +1,7 @@
-/* eslint react/prop-types: 0 */
-
+import React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
-import React from 'react';
+
 import Filters from './Filters';
 import Card from './Card';
 
