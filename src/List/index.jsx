@@ -1,3 +1,5 @@
+/* eslint react/prop-types: 0 */
+
 import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
 import React from 'react';
@@ -19,29 +21,19 @@ const Sep = styled.hr`
   background-color: #e7e7e7;
 `;
 
+const CardCol = ({ children }) => <Col xs={12} sm={6} lg={4}>{children}</Col>;
+
 export default () => (
   <List>
     <Filters />
     <Sep />
     <Row>
-      <Col xs={12} sm={6} lg={4}>
-        <Card />
-      </Col>
-      <Col xs={12} sm={6} lg={4}>
-        <Card />
-      </Col>
-      <Col xs={12} sm={6} lg={4}>
-        <Card />
-      </Col>
-      <Col xs={12} sm={6} lg={4}>
-        <Card />
-      </Col>
-      <Col xs={12} sm={6} lg={4}>
-        <Card />
-      </Col>
-      <Col xs={12} sm={6} lg={4}>
-        <Card />
-      </Col>
+      <CardCol><Card /></CardCol>
+      <CardCol><Card /></CardCol>
+      <CardCol><Card /></CardCol>
+      <CardCol><Card /></CardCol>
+      <CardCol><Card /></CardCol>
+      <CardCol><Card /></CardCol>
     </Row>
   </List>
 );

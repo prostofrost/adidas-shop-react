@@ -13,6 +13,7 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
+  font-family: 'AvenirNext_bold';
   font-size: 24px;
   text-transform: uppercase;
   background: transparent;

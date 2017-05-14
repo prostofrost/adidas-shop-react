@@ -10,10 +10,10 @@ yarn start
 ### Build project
 Builds the app for production to the build folder:
 ```sh
-$ yarn run build
+yarn run build
 ```
 ### Testing
 Launches the test runner in the interactive watch mode:
 ```sh
-$ yarn test
+yarn test
 ```
