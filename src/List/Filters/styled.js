@@ -60,7 +60,7 @@ export const Item = styled.button`
   background: none;
   font-size: 24px;
   text-transform: uppercase;
-  color: ${props => (props.active ? '#4d42f8' : '#d6d6d6')};
+  color: ${props => (props.isActive ? '#4d42f8' : '#d6d6d6')};
   transition: all 0.4s ease;
   &:hover {
     color: #4d42f8;
