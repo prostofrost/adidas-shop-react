@@ -7,7 +7,7 @@ export default () => (
       <Link isActive isDropdown>Sports</Link>
       <NavSub>
         <Item subitem>
-          <Link active>Shoes</Link>
+          <Link isActive>Shoes</Link>
         </Item>
         <Item subitem><Link>Clothing</Link></Item>
         <Item subitem><Link>Accesories</Link></Item>
