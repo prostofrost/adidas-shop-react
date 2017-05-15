@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Label from '../../Label';
+import Label from '../../../components/Label';
+
 import { Price, Card } from './styled';
 
 export default () => (

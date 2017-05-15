@@ -3,10 +3,10 @@ import Name from './Details/Name';
 import SaveBtn from './Details/SaveBtn';
 import Colours from './Details/Colours';
 import Price from './Details/Price';
-import Label from '../Label';
-import Gallery from './Gallery';
-import Description from './Description';
-import BuyBtn from './BuyBtn';
+import Label from '../../components/Label';
+import Gallery from './Details//Gallery';
+import Description from './Details/Description';
+import BuyBtn from './Details/BuyBtn';
 import { Product, Info, Title, Sets, ColourSale } from './styled';
 
 export default () => (
