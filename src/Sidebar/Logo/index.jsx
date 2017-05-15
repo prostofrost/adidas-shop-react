@@ -11,18 +11,14 @@ const Wrapper = styled.div`
 const Img = styled.img`
   width: 40px;
   @media only screen and (min-width: 768px) {
-    width: inherit;
+    width: 77px;
   }
 `;
 
 export default () => (
   <Wrapper>
     <Link to="/">
-      <Img
-        src={require('./logo.png')}
-        srcSet={`${require('./logo@2x.png')} 2x,${require('./logo@3x.png')} 3x`}
-        alt="Adidas Logo"
-      />
+      <Img src={require('./logo.svg')} alt="Adidas Logo" />
     </Link>
   </Wrapper>
 );

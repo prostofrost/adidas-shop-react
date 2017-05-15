@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Sidebar from './Sidebar';
-import List from './List';
-import Product from './Product';
+import List from './Products/List';
+import Show from './Products/Show';
 
 const Layout = styled.div`
   display: flex;
@@ -28,7 +28,7 @@ export default () => (
       <Sidebar />
       <Wrapper>
         <Route exact path="/" component={List} />
-        <Route path="/item" component={Product} />
+        <Route path="/item" component={Show} />
       </Wrapper>
     </Layout>
   </Router>

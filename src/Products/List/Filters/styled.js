@@ -4,7 +4,10 @@ export const Filters = styled.div`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  margin: 0 0 15px;
+  margin: 0 0 25px;
+  @media only screen and (min-width: 880px) {
+    margin: 0 0 15px;
+  }
   @media only screen and (min-width: 880px) {
     display: flex;
     align-items: center;
@@ -17,6 +20,7 @@ export const Filters = styled.div`
 `;
 
 export const Gender = styled.div`
+  margin: 0 0 15px;
   @media only screen and (min-width: 880px) {
     margin: 0 35px 0 0;
   }
