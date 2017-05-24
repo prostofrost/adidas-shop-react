@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Btn = styled.div`
-  font-size: 20px;
+  font-size: 16px;
   padding: 0px 0;
   position: fixed;
   left: 0;
@@ -10,6 +10,9 @@ const Btn = styled.div`
   bottom: 0;
   text-align: center;
   transition: all 0.3s ease;
+  @media only screen and (min-width: 380px) {
+    font-size: 20px;
+  }
   @media only screen and (min-width: 768px) {
     font-size: 32px;
     left: 30%;
@@ -24,7 +27,7 @@ const Btn = styled.div`
     text-transform: uppercase;
     border: none;
     background: none;
-    padding: 25px 0;
+    padding: 20px 0;
     background-image: linear-gradient(to right, #4949aa, #27275d);
     @media only screen and (min-width: 768px) {
       padding: 40px 0;

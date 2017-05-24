@@ -12,4 +12,4 @@ const Label = styled.span`
   }
 `;
 
-export default () => <Label className="product-sets-sale-badge">sale</Label>;
+export default () => <Label>sale</Label>;

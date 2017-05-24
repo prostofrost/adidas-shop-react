@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 export const Filters = styled.div`
+  padding: 0.7em 1em;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  margin: 0 0 25px;
-  @media only screen and (min-width: 880px) {
-    margin: 0 0 15px;
+  margin: 0;
+  border-bottom: 3px solid #e7e7e7;
+  @media only screen and (min-width: 768px) {
+    padding: 0.7em 1.5em 1em 1.5em;
   }
   @media only screen and (min-width: 880px) {
     display: flex;
@@ -62,10 +64,13 @@ export const Icon = styled.div`
 export const Item = styled.button`
   font-family: 'AvenirNext_bold';
   background: none;
-  font-size: 24px;
+  font-size: 18px;
   text-transform: uppercase;
   color: ${props => (props.isActive ? '#4d42f8' : '#d6d6d6')};
   transition: all 0.4s ease;
+  @media only screen and (min-width: 380px) {
+    font-size: 24px;
+  }
   &:hover {
     color: #4d42f8;
   }
@@ -75,6 +80,9 @@ export const Label = styled.div`
   display: inline-block;
   color: #4d42f8;
   margin-right: 15px;
-  font-size: 24px;
+  font-size: 18px;
   text-transform: uppercase;
+  @media only screen and (min-width: 380px) {
+    font-size: 24px;
+  }
 `;

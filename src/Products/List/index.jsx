@@ -1,38 +1,42 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
+
+import styled from 'styled-components';
 
 import Filters from './Filters';
 import Card from './Card';
 
-const List = styled.div`
-  padding: 0.7em 1em;
+const Wrapper = styled(Row)`
+  padding: 0.7em 1em 0.7em 1em;
   @media only screen and (min-width: 768px) {
-    padding: 0.7em 1.5em;
+    padding: 0.7em 1em 0.7em 1em;
   }
-`;
-
-const Sep = styled.hr`
-  margin: 0 -1.5em 0.5em;
-  height: 3px;
-  border: 0 none;
-  color: #e7e7e7;
-  background-color: #e7e7e7;
 `;
 
 const CardCol = ({ children }) => <Col xs={12} sm={6} lg={4}>{children}</Col>;
 
 export default () => (
-  <List>
+  <div>
     <Filters />
-    <Sep />
-    <Row>
-      <CardCol><Card /></CardCol>
-      <CardCol><Card /></CardCol>
-      <CardCol><Card /></CardCol>
-      <CardCol><Card /></CardCol>
-      <CardCol><Card /></CardCol>
-      <CardCol><Card /></CardCol>
-    </Row>
-  </List>
+    <Wrapper>
+      <CardCol>
+        <Card to="/item" price="$170" src={require('./shoes-1.jpg')} alt="Adidas shoes" />
+      </CardCol>
+      <CardCol>
+        <Card to="/item" price="$270" src={require('./shoes-2.jpg')} alt="Adidas shoes" />
+      </CardCol>
+      <CardCol>
+        <Card isSale to="/item" price="$340" src={require('./shoes-3.jpg')} alt="Adidas shoes" />
+      </CardCol>
+      <CardCol>
+        <Card isSale to="/item" price="$570" src={require('./shoes-2.jpg')} alt="Adidas shoes" />
+      </CardCol>
+      <CardCol>
+        <Card to="/item" price="$92" src={require('./shoes-3.jpg')} alt="Adidas shoes" />
+      </CardCol>
+      <CardCol>
+        <Card isSale to="/item" price="$92" src={require('./shoes-1.jpg')} alt="Adidas shoes" />
+      </CardCol>
+    </Wrapper>
+  </div>
 );

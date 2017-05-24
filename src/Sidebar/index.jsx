@@ -15,7 +15,6 @@ const Sidebar = styled.aside`
   z-index: 2;
   @media only screen and (min-width: 768px) {
     position: relative;
-    height: inherit;
     text-align: center;
     padding: 50px 0 0;
     flex: 0 0 30%;

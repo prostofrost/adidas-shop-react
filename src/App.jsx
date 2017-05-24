@@ -9,7 +9,7 @@ import Show from './Products/Show';
 
 const Layout = styled.div`
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 const Wrapper = styled.section`
