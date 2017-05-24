@@ -1,24 +1,23 @@
 import styled from 'styled-components';
 
 export const Gallery = styled.div`
+  margin-top: 0;
   @media only screen and (min-width: 992px) {
-    margin-top: -8em;
+    padding-top: 130px;
   }
   @media only screen and (min-width: 1200px) {
-    margin-top: -12em;
+    padding-top: 50px;
   }
 `;
 
 export const BigImg = styled.div`
   margin-bottom: 30px;
   > img {
-    width: 100%;
+    max-height: 740px;
+    max-width: 100%;
   }
   @media only screen and (min-width: 992px) {
     margin-bottom: 0;
-    > img {
-      width: 80%;
-    }
   }
 `;
 
@@ -27,12 +26,16 @@ export const Thumbnails = styled.div`
   flex-wrap: nowrap;
   align-items: center;
   justify-content: flex-start;
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 768px) {
+    padding: 0 20px;
     justify-content: space-between;
+  }
+  @media only screen and (min-width: 1200px) {
+    padding: 0 80px;
   }
 `;
 
-export const Item = styled.div`
+export const Thumb = styled.div`
   border: none;
   background: none;
   margin-right: 10px;
@@ -49,46 +52,4 @@ export const Item = styled.div`
   ${props => props.isActive && `
     outline: 5px solid #e5e5e7;
   `};
-`;
-
-export const Decor = styled.div`
-  display: none;
-  flex: 0 0 20%;
-  padding: 0 5px;
-  @media only screen and (min-width: 992px) {
-    display: block;
-  }
-`;
-
-export const Lines = styled.div`
-  width: 100%;
-  height: 3px;
-  background: #e7e7e7;
-  position: relative;
-  &::before, &::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 3px;
-    background: #e7e7e7;
-    position: relative;
-    top: 6px;
-  }
-  &::after {
-    top: -9px;
-  }
-`;
-
-export const More = styled.div`
-  display: none;
-  flex: 0 0 8%;
-  font-family: 'AvenirNext';
-  text-align: left;
-  font-size: 14px;
-  color: #c0c0c0;
-  background: none;
-  border: none;
-  @media only screen and (min-width: 992px) {
-    display: block;
-  }
 `;
