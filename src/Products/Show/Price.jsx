@@ -7,7 +7,6 @@ const Price = styled.h2`
   margin: 0 0 10px;
   @media only screen and (min-width: 380px) {
     font-size: 80px;
-    margin: 0;
   }
   @media only screen and (min-width: 992px) {
     color: #e2e2e2;

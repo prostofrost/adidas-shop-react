@@ -13,10 +13,8 @@ const Layout = styled.div`
 `;
 
 const Wrapper = styled.section`
-  padding-top: 70px;
   overflow: auto;
   @media only screen and (min-width: 768px) {
-    padding-top: 0;
     flex: 1 1 auto;
     overflow: auto;
   }
