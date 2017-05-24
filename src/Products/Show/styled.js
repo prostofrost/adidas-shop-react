@@ -9,7 +9,7 @@ export const Product = styled.div`
   }
 `;
 
-export const Title = styled.div`
+export const Info = styled.div`
   @media only screen and (min-width: 992px) {
     position: absolute;
     display: flex;
@@ -32,7 +32,7 @@ export const Sets = styled.div`
   }
 `;
 
-export const ColourSale = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: row-reverse;
   align-items: center;

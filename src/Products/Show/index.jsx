@@ -7,22 +7,23 @@ import Label from '../../components/Label';
 import Gallery from './Gallery';
 import Description from './Description';
 import BuyBtn from './BuyBtn';
-import { Product, Title, Sets, ColourSale } from './styled';
+import { Product, Info, Sets, Wrapper } from './styled';
 
 export default () => (
   <Product>
-    <Title>
+    <Info>
       <Name />
       <SaveBtn />
-    </Title>
+    </Info>
 
     <Sets>
-      <ColourSale>
+      <Wrapper>
         <Colours />
         <Label />
-      </ColourSale>
+      </Wrapper>
       <Price />
     </Sets>
+
     <Gallery />
     <Description />
     <BuyBtn />
