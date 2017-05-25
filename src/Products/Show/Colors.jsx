@@ -21,7 +21,7 @@ const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#77d9e8'];
 export default props => (
   <div>
     {colors.map(color => (
-      <Button key={color.id} color={color} onClick={() => props.onChange(color)} />
+      <Button key={color} color={color} onClick={() => props.onChange(color)} />
     ))}
   </div>
 );
