@@ -41,3 +41,33 @@ export const Wrapper = styled.div`
     flex-direction: row;
   }
 `;
+
+export const Price = styled.h2`
+  font-size: 70px;
+  margin: 0 0 10px;
+  color: ${props => props.color};
+  transition: all 0.5s ease;
+  @media only screen and (min-width: 380px) {
+    font-size: 80px;
+  }
+  @media only screen and (min-width: 992px) {
+    padding: 0;
+    margin: 35px 0 0;
+  }
+`;
+
+export const SaveBtn = styled.button`
+  display: none;
+  background: ${props => props.color};
+  border: none;
+  color: #fff;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  @media only screen and (min-width: 992px) {
+    display: block;
+  }
+`;
