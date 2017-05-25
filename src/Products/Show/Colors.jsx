@@ -18,8 +18,8 @@ const Button = styled.button`
 
 export default props => (
   <div>
-    {props.colors.map(color => (
-      <Button key={color} color={color} onClick={() => props.onChange(color)} />
+    {props.colors.map((color, index) => (
+      <Button key={color} color={color} onClick={() => props.onChange(index)} />
     ))}
   </div>
 );
