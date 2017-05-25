@@ -25,7 +25,7 @@ const MobileNav = styled.button`
 const Wrapper = styled.div`
   display: ${props => (props.hide ? 'none' : 'block')};
   @media only screen and (min-width: 768px) {
-    display: ${props => (props.hide ? 'block' : 'block')};
+    display: ${props => props.hide && 'block'};
   }
 `;
 
