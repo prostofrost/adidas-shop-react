@@ -12,12 +12,12 @@ const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#77d9e8'];
 class Details extends Component {
   constructor(props) {
     super(props);
-    this.state = { currentIndex: 0 };
+    this.state = { selectedColorIndex: 0 };
     this.handleChangeColor = this.handleChangeColor.bind(this);
   }
 
-  handleChangeColor(currentIndex) {
-    this.setState({ currentIndex });
+  handleChangeColor(selectedColorIndex) {
+    this.setState({ selectedColorIndex });
   }
 
   render() {
@@ -25,7 +25,7 @@ class Details extends Component {
       <Product>
         <Info>
           <Name />
-          <SaveBtn color={colors[this.state.currentIndex]}>save</SaveBtn>
+          <SaveBtn color={colors[this.state.selectedColorIndex]}>save</SaveBtn>
         </Info>
 
         <Sets>
@@ -33,7 +33,7 @@ class Details extends Component {
             <Colors colors={colors} onChange={this.handleChangeColor} />
             <Label />
           </Wrapper>
-          <Price color={colors[this.state.currentIndex]}>$170</Price>
+          <Price color={colors[this.state.selectedColorIndex]}>$170</Price>
         </Sets>
 
         <Gallery />

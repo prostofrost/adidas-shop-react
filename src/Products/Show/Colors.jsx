@@ -10,7 +10,7 @@ const Button = styled.button`
   margin-left: 8px;
   border: 2px solid transparent;
   transition: all 0.5s ease;
-  background-color: ${props => `${props.color}`};
+  background-color: ${p => p.color};
   &:hover {
     border: 2px solid #0e0e0e;
   }
