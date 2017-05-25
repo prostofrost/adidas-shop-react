@@ -7,14 +7,16 @@ import Description from './Description';
 import BuyBtn from './BuyBtn';
 import { Product, Info, Sets, Wrapper, Price, SaveBtn } from './styled';
 
+const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#77d9e8'];
+
 class Details extends Component {
   constructor(props) {
     super(props);
-    this.state = { color: '#e2e2e2' };
-    this.changeColor = this.changeColor.bind(this);
+    this.state = { color: colors[0] };
+    this.handleChangeColor = this.handleChangeColor.bind(this);
   }
 
-  changeColor(color) {
+  handleChangeColor(color) {
     this.setState({ color });
   }
 
@@ -28,7 +30,7 @@ class Details extends Component {
 
         <Sets>
           <Wrapper>
-            <Colors onChange={this.changeColor} />
+            <Colors colors={colors} onChange={this.handleChangeColor} />
             <Label />
           </Wrapper>
           <Price color={this.state.color}>$170</Price>
