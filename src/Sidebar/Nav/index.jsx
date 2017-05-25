@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import Menu from './Menu';
 
-import menuicon from './menu-icon.svg';
+import menuIcon from './menu-icon.svg';
 
 const MobileNav = styled.button`
   display: block;
@@ -13,7 +13,7 @@ const MobileNav = styled.button`
   border: none;
   width: 40px;
   height: 40px;
-  background: url(${menuicon}) no-repeat;
+  background: url(${menuIcon}) no-repeat;
   position: absolute;
   top: 18px;
   right: 20px;
@@ -23,9 +23,9 @@ const MobileNav = styled.button`
 `;
 
 const Wrapper = styled.div`
-  display: ${props => (props.hide ? 'none' : 'block')};
+  display: ${props => (props.isHidden ? 'none' : 'block')};
   @media only screen and (min-width: 768px) {
-    display: ${props => props.hide && 'block'};
+    display: ${props => props.isHidden && 'block'};
   }
 `;
 
@@ -70,7 +70,7 @@ class Navigation extends Component {
     return (
       <div>
         <MobileNav onClick={this.toggleMenu} />
-        <Wrapper hide={!this.state.isOpened}>
+        <Wrapper isHidden={!this.state.isOpened}>
           <Nav>
             <Menu title="Football">
               <Link to="/football/shoes">Shoes</Link>
