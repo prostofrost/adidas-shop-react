@@ -1,31 +1,45 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Name from './Name';
-import SaveBtn from './SaveBtn';
-import Colours from './Colours';
-import Price from './Price';
+import Colors from './Colors';
 import Label from '../../components/Label';
 import Gallery from './Gallery';
 import Description from './Description';
 import BuyBtn from './BuyBtn';
-import { Product, Info, Sets, Wrapper } from './styled';
+import { Product, Info, Sets, Wrapper, Price, SaveBtn } from './styled';
 
-export default () => (
-  <Product>
-    <Info>
-      <Name />
-      <SaveBtn />
-    </Info>
+class Details extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { color: '#e2e2e2' };
+    this.changeColor = this.changeColor.bind(this);
+  }
 
-    <Sets>
-      <Wrapper>
-        <Colours />
-        <Label />
-      </Wrapper>
-      <Price />
-    </Sets>
+  changeColor(color) {
+    this.setState({ color });
+  }
 
-    <Gallery />
-    <Description />
-    <BuyBtn />
-  </Product>
-);
+  render() {
+    return (
+      <Product>
+        <Info>
+          <Name />
+          <SaveBtn color={this.state.color}>save</SaveBtn>
+        </Info>
+
+        <Sets>
+          <Wrapper>
+            <Colors onChange={this.changeColor} />
+            <Label />
+          </Wrapper>
+          <Price color={this.state.color}>$170</Price>
+        </Sets>
+
+        <Gallery />
+        <Description />
+        <BuyBtn />
+      </Product>
+    );
+  }
+}
+
+export default Details;
