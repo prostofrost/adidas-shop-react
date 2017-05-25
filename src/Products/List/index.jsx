@@ -6,7 +6,14 @@ import styled from 'styled-components';
 import Filters from './Filters';
 import Card from './Card';
 
-const Wrapper = styled(Row)`
+const Wrapper = styled.div`
+  margin-top: 5em;
+  @media only screen and (min-width: 768px) {
+    margin-top: 0;
+  }
+`;
+
+const RowWrapper = styled(Row)`
   padding: 0.7em 1em 0.7em 1em;
   @media only screen and (min-width: 768px) {
     padding: 0.7em 1em 0.7em 1em;
@@ -16,9 +23,9 @@ const Wrapper = styled(Row)`
 const CardCol = ({ children }) => <Col xs={12} sm={6} lg={4}>{children}</Col>;
 
 export default () => (
-  <div>
+  <Wrapper>
     <Filters />
-    <Wrapper>
+    <RowWrapper>
       <CardCol>
         <Card to="/item" price="$170" src={require('./shoes-1.jpg')} alt="Adidas shoes" />
       </CardCol>
@@ -37,6 +44,6 @@ export default () => (
       <CardCol>
         <Card isSale to="/item" price="$92" src={require('./shoes-1.jpg')} alt="Adidas shoes" />
       </CardCol>
-    </Wrapper>
-  </div>
+    </RowWrapper>
+  </Wrapper>
 );
