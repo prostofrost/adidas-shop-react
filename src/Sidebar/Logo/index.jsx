@@ -17,7 +17,7 @@ const Img = styled.img`
 
 export default () => (
   <Wrapper>
-    <Link to="/">
+    <Link to="/products/football/shoes">
       <Img src={require('./logo.svg')} alt="Adidas Logo" />
     </Link>
   </Wrapper>

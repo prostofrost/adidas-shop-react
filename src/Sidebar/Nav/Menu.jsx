@@ -30,6 +30,9 @@ const MenuItem = styled.button`
     right: -20px;
     top: 10px;
     transition: all 0.4s ease;
+    ${props => props.isActive && `
+      transform: rotate(-180deg);
+    `}
   }
 `;
 
@@ -49,7 +52,9 @@ class Menu extends Component {
   render() {
     return (
       <div>
-        <MenuItem onClick={this.handleClick}>{this.props.title}</MenuItem>
+        <MenuItem isActive={this.state.isOpened} onClick={this.handleClick}>
+          {this.props.title}
+        </MenuItem>
         {this.state.isOpened && <NavSub>{this.props.children}</NavSub>}
       </div>
     );
