@@ -41,7 +41,7 @@ export default props => (
       <Thumb
         key={image.id}
         onClick={() => props.onClick(index)}
-        isActive={index === props.isActive}
+        isActive={index === props.selectedImageIndex}
       >
         <img src={image.src} alt={image.alt} />
       </Thumb>

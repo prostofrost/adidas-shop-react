@@ -14,41 +14,43 @@ const Wrapper = styled.div`
   }
 `;
 
-const BigImg = styled.div`
+const ImgWrap = styled.div`
   margin-bottom: 30px;
   text-align: center;
-  > img {
-    max-height: 740px;
-    max-width: 100%;
   }
   @media only screen and (min-width: 992px) {
     margin-bottom: 30px;
   }
 `;
 
+const BigImg = styled.img`
+  max-height: 740px;
+  max-width: 100%;
+`;
+
 const images = [
   {
-    id: '01',
+    id: 1,
     src: require('../../List/shoes-1@3x.jpg'),
     alt: 'Utra Boost first',
   },
   {
-    id: '02',
+    id: 2,
     src: require('../../List/shoes-2@3x.jpg'),
     alt: 'Utra Boost second',
   },
   {
-    id: '03',
+    id: 3,
     src: require('../../List/shoes-3@3x.jpg'),
     alt: 'Utra Boost third',
   },
   {
-    id: '04',
+    id: 4,
     src: require('../../List/shoes-1@3x.jpg'),
     alt: 'Utra Boost fouth',
   },
   {
-    id: '05',
+    id: 5,
     src: require('../../List/shoes-2@3x.jpg'),
     alt: 'Utra Boost fifth',
   },
@@ -62,21 +64,22 @@ class Gallery extends Component {
   }
 
   handleChangeImage(selectedImageIndex) {
-    this.setState({ selectedImageIndex, isActive: true });
+    this.setState({ selectedImageIndex });
   }
+
   render() {
     return (
       <Wrapper>
-        <BigImg>
-          <img
+        <ImgWrap>
+          <BigImg
             src={images[this.state.selectedImageIndex].src}
             alt={images[this.state.selectedImageIndex].alt}
           />
-        </BigImg>
+        </ImgWrap>
         <Thumbs
           images={images}
           onClick={this.handleChangeImage}
-          isActive={this.state.selectedImageIndex}
+          selectedImageIndex={this.state.selectedImageIndex}
         />
       </Wrapper>
     );
