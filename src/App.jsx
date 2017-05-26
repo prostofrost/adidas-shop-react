@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 
 import styled from 'styled-components';
 
@@ -25,9 +25,11 @@ export default () => (
     <Layout>
       <Sidebar />
       <Wrapper>
-        <Redirect from="/" to="/products/football/shoes" />
-        <Route exact path="/products/:section/:category" component={List} />
-        <Route exact path="/products/:id" component={Show} />
+        <Switch>
+          <Route path="/products/:section/:category" component={List} />
+          <Route path="/products/:id" component={Show} />
+          <Redirect from="/" to="/products/football/shoes" />
+        </Switch>
       </Wrapper>
     </Layout>
   </Router>
