@@ -25,9 +25,6 @@ export default () => (
     <Layout>
       <Sidebar />
       <Wrapper>
-        <Route exact path="/" component={List} />
-        <Route path="/detail" component={Show} />
-
         <Route exact path="/products/:section/:category" component={List} />
         <Route exact path="/products/:id" component={Show} />
       </Wrapper>
