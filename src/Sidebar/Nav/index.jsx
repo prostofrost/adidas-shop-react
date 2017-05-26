@@ -73,21 +73,21 @@ class Navigation extends Component {
         <Wrapper isHidden={!this.state.isOpened}>
           <Nav>
             <Menu title="Football">
-              <Link to="/football/shoes">Shoes</Link>
-              <Link to="/football/clothing">Clothing</Link>
-              <Link to="/football/accesories">Accesories</Link>
+              <Link to="/products/football/shoes">Shoes</Link>
+              <Link to="/products/football/clothing">Clothing</Link>
+              <Link to="/products/football/accesories">Accesories</Link>
             </Menu>
 
             <Menu title="Running">
-              <Link to="/running/shoes">Shoes</Link>
-              <Link to="/running/clothing">Clothing</Link>
-              <Link to="/running/accesories">Accesories</Link>
+              <Link to="/products/running/shoes">Shoes</Link>
+              <Link to="/products/running/clothing">Clothing</Link>
+              <Link to="/products/running/accesories">Accesories</Link>
             </Menu>
 
             <Menu title="Basketball">
-              <Link to="/basketball/shoes">Shoes</Link>
-              <Link to="/basketball/clothing">Clothing</Link>
-              <Link to="/basketball/accesories">Accesories</Link>
+              <Link to="/products/basketball/shoes">Shoes</Link>
+              <Link to="/products/basketball/clothing">Clothing</Link>
+              <Link to="/products/basketball/accesories">Accesories</Link>
             </Menu>
           </Nav>
         </Wrapper>

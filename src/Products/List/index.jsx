@@ -28,22 +28,55 @@ export default () => (
     <ListWrapper>
       <Row>
         <CardCol>
-          <Card to="/item" price="$170" src={require('./shoes-1.jpg')} alt="Adidas shoes" />
+          <Card
+            to="/products/detail"
+            price="$170"
+            src={require('./shoes-1.jpg')}
+            alt="Adidas shoes"
+          />
         </CardCol>
         <CardCol>
-          <Card to="/item" price="$270" src={require('./shoes-2.jpg')} alt="Adidas shoes" />
+          <Card
+            to="/products/detail"
+            price="$270"
+            src={require('./shoes-2.jpg')}
+            alt="Adidas shoes"
+          />
         </CardCol>
         <CardCol>
-          <Card isSale to="/item" price="$340" src={require('./shoes-3.jpg')} alt="Adidas shoes" />
+          <Card
+            isSale
+            to="product/detail"
+            price="$340"
+            src={require('./shoes-3.jpg')}
+            alt="Adidas shoes"
+          />
         </CardCol>
         <CardCol>
-          <Card isSale to="/item" price="$570" src={require('./shoes-2.jpg')} alt="Adidas shoes" />
+          <Card
+            isSale
+            to="/products/detail"
+            price="$570"
+            src={require('./shoes-2.jpg')}
+            alt="Adidas shoes"
+          />
         </CardCol>
         <CardCol>
-          <Card to="/item" price="$92" src={require('./shoes-3.jpg')} alt="Adidas shoes" />
+          <Card
+            to="/products/detail"
+            price="$92"
+            src={require('./shoes-3.jpg')}
+            alt="Adidas shoes"
+          />
         </CardCol>
         <CardCol>
-          <Card isSale to="/item" price="$92" src={require('./shoes-1.jpg')} alt="Adidas shoes" />
+          <Card
+            isSale
+            to="/products/detail"
+            price="$92"
+            src={require('./shoes-1.jpg')}
+            alt="Adidas shoes"
+          />
         </CardCol>
       </Row>
     </ListWrapper>
