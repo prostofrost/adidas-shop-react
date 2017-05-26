@@ -1,47 +1,89 @@
-import React from 'react';
-import { Gallery, BigImg, Thumbnails, Thumb } from './styled';
+import React, { Component } from 'react';
 
-export default () => (
-  <Gallery>
-    <BigImg>
-      <img src={require('./shoes-3@3x.jpg')} alt="Adidas Utra Boost" />
-    </BigImg>
-    <Thumbnails>
-      <Thumb isActive>
-        <img
-          src={require('./shoes-3-thumb1.jpg')}
-          srcSet={`${require('./shoes-3-thumb1@2x.jpg')} 2x`}
-          alt="Adidas Utra Boost"
+import styled from 'styled-components';
+
+import Thumbs from './Thumbs';
+
+const Wrapper = styled.div`
+  margin-top: 0;
+  @media only screen and (min-width: 992px) {
+    padding-top: 130px;
+  }
+  @media only screen and (min-width: 1200px) {
+    padding-top: 50px;
+  }
+`;
+
+const ImgWrap = styled.div`
+  margin-bottom: 30px;
+  text-align: center;
+  }
+  @media only screen and (min-width: 992px) {
+    margin-bottom: 30px;
+  }
+`;
+
+const BigImg = styled.img`
+  max-height: 740px;
+  max-width: 100%;
+`;
+
+const images = [
+  {
+    id: 1,
+    src: require('../../List/shoes-1@3x.jpg'),
+    alt: 'Utra Boost first',
+  },
+  {
+    id: 2,
+    src: require('../../List/shoes-2@3x.jpg'),
+    alt: 'Utra Boost second',
+  },
+  {
+    id: 3,
+    src: require('../../List/shoes-3@3x.jpg'),
+    alt: 'Utra Boost third',
+  },
+  {
+    id: 4,
+    src: require('../../List/shoes-1@3x.jpg'),
+    alt: 'Utra Boost fouth',
+  },
+  {
+    id: 5,
+    src: require('../../List/shoes-2@3x.jpg'),
+    alt: 'Utra Boost fifth',
+  },
+];
+
+class Gallery extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { selectedImageIndex: 0 };
+    this.handleChangeImage = this.handleChangeImage.bind(this);
+  }
+
+  handleChangeImage(selectedImageIndex) {
+    this.setState({ selectedImageIndex });
+  }
+
+  render() {
+    return (
+      <Wrapper>
+        <ImgWrap>
+          <BigImg
+            src={images[this.state.selectedImageIndex].src}
+            alt={images[this.state.selectedImageIndex].alt}
+          />
+        </ImgWrap>
+        <Thumbs
+          images={images}
+          onClick={this.handleChangeImage}
+          selectedImageIndex={this.state.selectedImageIndex}
         />
-      </Thumb>
-      <Thumb>
-        <img
-          src={require('./shoes-3-thumb2.jpg')}
-          srcSet={`${require('./shoes-3-thumb2@2x.jpg')} 2x`}
-          alt="Adidas Utra Boost"
-        />
-      </Thumb>
-      <Thumb>
-        <img
-          src={require('./shoes-3-thumb3.jpg')}
-          srcSet={`${require('./shoes-3-thumb3@2x.jpg')} 2x`}
-          alt="Adidas Utra Boost"
-        />
-      </Thumb>
-      <Thumb>
-        <img
-          src={require('./shoes-3-thumb4.jpg')}
-          srcSet={`${require('./shoes-3-thumb4@2x.jpg')} 2x`}
-          alt="Adidas Utra Boost"
-        />
-      </Thumb>
-      <Thumb>
-        <img
-          src={require('./shoes-3-thumb2.jpg')}
-          srcSet={`${require('./shoes-3-thumb4@2x.jpg')} 2x`}
-          alt="Adidas Utra Boost"
-        />
-      </Thumb>
-    </Thumbnails>
-  </Gallery>
-);
+      </Wrapper>
+    );
+  }
+}
+
+export default Gallery;

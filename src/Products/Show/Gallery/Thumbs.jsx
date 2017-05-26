@@ -1,27 +1,8 @@
+import React from 'react';
+
 import styled from 'styled-components';
 
-export const Gallery = styled.div`
-  margin-top: 0;
-  @media only screen and (min-width: 992px) {
-    padding-top: 130px;
-  }
-  @media only screen and (min-width: 1200px) {
-    padding-top: 50px;
-  }
-`;
-
-export const BigImg = styled.div`
-  margin-bottom: 30px;
-  > img {
-    max-height: 740px;
-    max-width: 100%;
-  }
-  @media only screen and (min-width: 992px) {
-    margin-bottom: 0;
-  }
-`;
-
-export const Thumbnails = styled.div`
+const Thumbnails = styled.div`
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -35,7 +16,7 @@ export const Thumbnails = styled.div`
   }
 `;
 
-export const Thumb = styled.div`
+const Thumb = styled.div`
   border: none;
   background: none;
   margin-right: 10px;
@@ -53,3 +34,17 @@ export const Thumb = styled.div`
     outline: 5px solid #e5e5e7;
   `};
 `;
+
+export default props => (
+  <Thumbnails>
+    {props.images.map((image, index) => (
+      <Thumb
+        key={image.id}
+        onClick={() => props.onClick(index)}
+        isActive={index === props.selectedImageIndex}
+      >
+        <img src={image.src} alt={image.alt} />
+      </Thumb>
+    ))}
+  </Thumbnails>
+);
