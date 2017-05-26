@@ -48,8 +48,12 @@ const Link = styled(NavLink)`
   transition: all 0.4s ease;
   color: #3c3c3c;
   cursor: pointer;
+  color: ${p => (p.active ? '#fff' : '#3c3c3c')};
   &:hover {
     color: #fff;
+  }
+  &.active {
+    color: #fff
   }
 `;
 
