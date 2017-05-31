@@ -28,8 +28,6 @@
     "prepush": "npm run lint"
   },
   "now": {
-    "alias": [
-      "demo-adidas-prostofrost.now.sh"
-    ]
+    "alias": "demo-adidas-prostofrost.now.sh"
   }
 }
