@@ -10,11 +10,6 @@
     "react-router-dom": "^4.1.1",
     "styled-components": "^1.4.6"
   },
-  "now": {
-    "alias": [
-      "demo-adidas-prostofrost"
-    ]
-  },
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
@@ -31,5 +26,10 @@
     "eject": "react-scripts eject",
     "lint": "$(npm bin)/eslint src --ext=js,jsx",
     "prepush": "npm run lint"
+  },
+  "now": {
+    "alias": [
+      "demo-adidas-prostofrost.now.sh"
+    ]
   }
 }
