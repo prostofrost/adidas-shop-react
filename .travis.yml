@@ -5,3 +5,10 @@ install:
   - npm install
 script:
   - npm run lint
+  - yarn run build
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: sh ./deploy.sh
+  on:
+    branch: master
