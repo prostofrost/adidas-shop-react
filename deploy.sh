@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-now ./build -t "$NOW_TOKEN" -p
-now ln -t "$NOW_TOKEN"
+now ./build -t "$NOW_TOKEN" -p now ln
