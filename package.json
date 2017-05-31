@@ -10,6 +10,11 @@
     "react-router-dom": "^4.1.1",
     "styled-components": "^1.4.6"
   },
+  "now": {
+    "alias": [
+      "demo-adidas-prostofrost"
+    ]
+  },
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
