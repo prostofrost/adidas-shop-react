@@ -3,12 +3,15 @@ node_js:
   - "node"
 install:
   - npm install
+  - npm i -g now
 script:
   - npm run lint
   - yarn run build
 deploy:
   provider: script
   skip_cleanup: true
-  script: sh ./deploy.sh
+  script:
+    - now -t "$NOW_TOKEN" -p
+    - now ln -t "$NOW_TOKEN"
   on:
     branch: feat/deploy-from-travis
