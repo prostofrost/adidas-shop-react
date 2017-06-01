@@ -12,5 +12,5 @@ deploy:
   skip_cleanup: true
   script: now -t "$NOW_TOKEN" -p
   on:
-    branch: feat/deploy-from-travis
+    branch: master
 after_deploy: now ln -t "$NOW_TOKEN"
