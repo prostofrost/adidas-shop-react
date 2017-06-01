@@ -7,14 +7,11 @@ install:
 script:
   - npm run lint
   - yarn run build
-  - npm deploy
-  - npm aliasing
-branches:
-  only:
-    - feat/deploy-from-travis
-# deploy:
-#   provider: script
-#   skip_cleanup: true
-#   script: now -t "$NOW_TOKEN" -p && now ln -t "$NOW_TOKEN"
-#   on:
-#     branch: feat/deploy-from-travis
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: now -t "$NOW_TOKEN" -p
+  on:
+    branch: feat/deploy-from-travis
+after_deploy:
+  script: now ln -t "$NOW_TOKEN"

@@ -25,9 +25,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "$(npm bin)/eslint src --ext=js,jsx",
-    "prepush": "npm run lint",
-    "deploy": "now -t $NOW_TOKEN -p",
-    "aliasing": "now ln -t $NOW_TOKEN"
+    "prepush": "npm run lint"
   },
   "now": {
     "alias": "demo-adidas-prostofrost.now.sh"
