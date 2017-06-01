@@ -26,5 +26,8 @@
     "eject": "react-scripts eject",
     "lint": "$(npm bin)/eslint src --ext=js,jsx",
     "prepush": "npm run lint"
+  },
+  "now": {
+    "alias": "demo-adidas-prostofrost.now.sh"
   }
 }
