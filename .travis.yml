@@ -10,8 +10,7 @@ script:
 deploy:
   provider: script
   skip_cleanup: true
-  script: now -t "$NOW_TOKEN" -p
+  script: now ./build -t "$NOW_TOKEN" -p
   on:
     branch: feat/deploy-from-travis
-after_deploy:
-  script: now ln -t "$NOW_TOKEN"
+after_deploy: now ln -t "$NOW_TOKEN"
