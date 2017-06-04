@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 
 import styled from 'styled-components';
 
 import Filters from './Filters';
 import Card from './Card';
+
+import imageLink from '../../constants/imageLink';
+import apiLink from '../../constants/apiLink';
 
 const Wrapper = styled.div`
   margin-top: 5em;
@@ -20,64 +23,64 @@ const ListWrapper = styled.div`
   }
 `;
 
+const Loading = styled.div`
+  font-family: 'AvenirNext_bold';
+  font-size: 32px;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+`;
+
 const CardCol = ({ children }) => <Col xs={12} sm={6} lg={4}>{children}</Col>;
 
-export default () =>
-  (<Wrapper>
-    <Filters />
-    <ListWrapper>
-      <Row>
-        <CardCol>
-          <Card
-            to="/products/detail"
-            price="$170"
-            src={require('./shoes-1.jpg')}
-            alt="Adidas shoes"
-          />
-        </CardCol>
-        <CardCol>
-          <Card
-            to="/products/detail"
-            price="$270"
-            src={require('./shoes-2.jpg')}
-            alt="Adidas shoes"
-          />
-        </CardCol>
-        <CardCol>
-          <Card
-            isSale
-            to="/products/detail"
-            price="$340"
-            src={require('./shoes-3.jpg')}
-            alt="Adidas shoes"
-          />
-        </CardCol>
-        <CardCol>
-          <Card
-            isSale
-            to="/products/detail"
-            price="$570"
-            src={require('./shoes-2.jpg')}
-            alt="Adidas shoes"
-          />
-        </CardCol>
-        <CardCol>
-          <Card
-            to="/products/detail"
-            price="$92"
-            src={require('./shoes-3.jpg')}
-            alt="Adidas shoes"
-          />
-        </CardCol>
-        <CardCol>
-          <Card
-            isSale
-            to="/products/detail"
-            price="$92"
-            src={require('./shoes-1.jpg')}
-            alt="Adidas shoes"
-          />
-        </CardCol>
-      </Row>
-    </ListWrapper>
-  </Wrapper>);
+class List extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { products: [], fetching: true };
+    this.fetchData = this.fetchData.bind(this);
+  }
+
+  componentDidMount() {
+    this.fetchData(this.props);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.fetchData(nextProps);
+  }
+
+  fetchData(props) {
+    const { section, category } = props.match.params;
+    fetch(`${apiLink()}/products/${section}/${category}`)
+      .then(response => response.json())
+      .then(data => this.setState({ products: data.items, fetching: false }));
+  }
+
+  render() {
+    const { fetching } = this.state;
+    return (
+      <Wrapper>
+        <Filters />
+        {fetching
+          ? <Loading>Loading...</Loading>
+          : <ListWrapper>
+            <Row>
+              {this.state.products.map(card =>
+                  (<CardCol key={card.id}>
+                    <Card
+                      to={`${this.state.url}/${card.id}`}
+                      src={imageLink(card.images[0].id, card.images[0].fileName)}
+                      alt={card.title}
+                      price={card.price / 100}
+                    />
+                  </CardCol>),
+                )}
+            </Row>
+          </ListWrapper>}
+      </Wrapper>
+    );
+  }
+}
+
+export default List;

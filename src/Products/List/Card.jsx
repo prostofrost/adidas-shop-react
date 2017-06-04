@@ -32,7 +32,8 @@ const Price = styled(Link)`
   align-items: center;
   text-decoration: none;
   padding: 20px 0;
-  background-image: ${props => (props.isSale ? 'linear-gradient(17deg, #0c09bf, #966dd8)' : 'none')};
+  background-image: ${props =>
+    props.isSale ? 'linear-gradient(17deg, #0c09bf, #966dd8)' : 'none'};
   color: ${props => (props.isSale ? '#fff' : '#111')};
   @media only screen and (min-width: 380px) {
     font-size: 30px;
@@ -44,10 +45,9 @@ const Price = styled(Link)`
   }
 `;
 
-export default props => (
-  <Card>
+export default props =>
+  (<Card>
     {props.isSale && <Wrapper><Label /></Wrapper>}
     <img src={props.src} alt={props.alt} />
     <Price isSale={props.isSale} to={props.to}>{props.price}</Price>
-  </Card>
-);
+  </Card>);
