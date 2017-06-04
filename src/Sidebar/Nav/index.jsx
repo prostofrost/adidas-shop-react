@@ -59,13 +59,13 @@ const Link = styled(NavLink)`
 class Navigation extends Component {
   constructor(props) {
     super(props);
-    this.state = { isOpened: false };
+    this.state = { isOpen: false };
     this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   toggleMenu() {
     this.setState(prevState => ({
-      isOpened: !prevState.isOpened,
+      isOpen: !prevState.isOpen,
     }));
   }
 
@@ -73,7 +73,7 @@ class Navigation extends Component {
     return (
       <div>
         <MobileNav onClick={this.toggleMenu} />
-        <Wrapper isHidden={!this.state.isOpened}>
+        <Wrapper isHidden={!this.state.isOpen}>
           <Nav>
             <Menu title="Football">
               <Link to="/products/football/shoes">Shoes</Link>

@@ -17,10 +17,6 @@ const Wrapper = styled.div`
 const ImgWrap = styled.div`
   margin-bottom: 30px;
   text-align: center;
-  }
-  @media only screen and (min-width: 992px) {
-    margin-bottom: 30px;
-  }
 `;
 
 const BigImg = styled.img`

@@ -30,7 +30,9 @@ const MenuItem = styled.button`
     right: -20px;
     top: 10px;
     transition: all 0.4s ease;
-    ${props => props.isActive && `
+    ${props =>
+      props.isActive &&
+      `
       transform: rotate(-180deg);
     `}
   }
@@ -39,23 +41,23 @@ const MenuItem = styled.button`
 class Menu extends Component {
   constructor(props) {
     super(props);
-    this.state = { isOpened: false };
+    this.state = { isOpen: false };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
     this.setState(prevState => ({
-      isOpened: !prevState.isOpened,
+      isOpen: !prevState.isOpen,
     }));
   }
 
   render() {
     return (
       <div>
-        <MenuItem isActive={this.state.isOpened} onClick={this.handleClick}>
+        <MenuItem isActive={this.state.isOpen} onClick={this.handleClick}>
           {this.props.title}
         </MenuItem>
-        {this.state.isOpened && <NavSub>{this.props.children}</NavSub>}
+        {this.state.isOpen && <NavSub>{this.props.children}</NavSub>}
       </div>
     );
   }

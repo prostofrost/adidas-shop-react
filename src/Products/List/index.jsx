@@ -22,8 +22,8 @@ const ListWrapper = styled.div`
 
 const CardCol = ({ children }) => <Col xs={12} sm={6} lg={4}>{children}</Col>;
 
-export default () => (
-  <Wrapper>
+export default () =>
+  (<Wrapper>
     <Filters />
     <ListWrapper>
       <Row>
@@ -46,7 +46,7 @@ export default () => (
         <CardCol>
           <Card
             isSale
-            to="product/detail"
+            to="/products/detail"
             price="$340"
             src={require('./shoes-3.jpg')}
             alt="Adidas shoes"
@@ -80,5 +80,4 @@ export default () => (
         </CardCol>
       </Row>
     </ListWrapper>
-  </Wrapper>
-);
+  </Wrapper>);
