@@ -7,9 +7,10 @@ const Label = styled.span`
   font-size: 14px;
   text-transform: uppercase;
   padding: 8px 20px;
+  display: ${props => (props.isHidden ? 'none' : 'block')};
   @media only screen and (min-width: 992px) {
     margin-left: 20px;
   }
 `;
 
-export default () => <Label>sale</Label>;
+export default props => <Label isHidden={!props.isSale}>sale</Label>;

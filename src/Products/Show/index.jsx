@@ -1,19 +1,33 @@
 import React, { Component } from 'react';
-import Name from './Name';
+
 import Colors from './Colors';
 import Label from '../../components/Label';
 import Gallery from './Gallery';
-import Description from './Description';
 import BuyBtn from './BuyBtn';
-import { Product, Info, Sets, Wrapper, Price, SaveBtn } from './styled';
+
+import { Product, Info, Title, Sets, Wrapper, Price, Description, SaveBtn } from './styled';
+
+import apiLink from '../../constants/apiLink';
 
 const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#77d9e8'];
 
 class Details extends Component {
   constructor(props) {
     super(props);
-    this.state = { selectedColorIndex: 0 };
+    this.state = { product: {}, selectedColorIndex: 0 };
     this.handleChangeColor = this.handleChangeColor.bind(this);
+    this.fetchData = this.fetchData.bind(this);
+  }
+
+  componentDidMount() {
+    this.fetchData(this.props);
+  }
+
+  fetchData(props) {
+    const { section, category, id } = props.match.params;
+    fetch(`${apiLink()}/products/${section}/${category}/${id}`)
+      .then(response => response.json())
+      .then(data => this.setState({ product: data }));
   }
 
   handleChangeColor(selectedColorIndex) {
@@ -21,23 +35,26 @@ class Details extends Component {
   }
 
   render() {
+    const card = this.state.product;
     return (
       <Product>
         <Info>
-          <Name />
+          <Title>{card.title}</Title>
           <SaveBtn color={colors[this.state.selectedColorIndex]}>save</SaveBtn>
         </Info>
 
         <Sets>
           <Wrapper>
             <Colors colors={colors} onChange={this.handleChangeColor} />
-            <Label />
+            <Label isSale={card.sale} />
           </Wrapper>
-          <Price color={colors[this.state.selectedColorIndex]}>$170</Price>
+          <Price color={colors[this.state.selectedColorIndex]}>
+            {`$${card.price / 100}`}
+          </Price>
         </Sets>
 
         <Gallery />
-        <Description />
+        <Description>{card.description}</Description>
         <BuyBtn />
       </Product>
     );

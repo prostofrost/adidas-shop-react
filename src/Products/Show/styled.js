@@ -17,6 +17,22 @@ export const Info = styled.div`
   }
 `;
 
+export const Title = styled.h1`
+  font-size: 36px;
+  line-height: 42px;
+  color: #3a3a3a;
+  text-transform: uppercase;
+  margin: 0;
+  @media only screen and (min-width: 768px) {
+    font-size: 64px;
+    line-height: 68px;
+    max-width: 500px;
+  }
+  @media only screen and (min-width: 992px) {
+    margin: 0 0 8px;
+  }
+`;
+
 export const Sets = styled.div`
   display: flex;
   flex-direction: column-reverse;
@@ -53,6 +69,20 @@ export const Price = styled.h2`
   @media only screen and (min-width: 992px) {
     padding: 0;
     margin: 35px 0 0;
+  }
+`;
+
+export const Description = styled.div`
+  font-family: 'AvenirNext';
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  color: #d8d8d8;
+  padding-top: 30px;
+  @media only screen and (min-width: 768px) {
+    font-size: 33px;
+    line-height: 1.52;
+    letter-spacing: 2.6px;
   }
 `;
 

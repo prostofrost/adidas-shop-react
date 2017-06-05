@@ -31,6 +31,7 @@ const Loading = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 50px;
+  color: #d6d6d6;
 `;
 
 const CardCol = ({ children }) => <Col xs={12} sm={6} lg={4}>{children}</Col>;
@@ -39,7 +40,6 @@ class List extends Component {
   constructor(props) {
     super(props);
     this.state = { products: [], fetching: true };
-    this.fetchData = this.fetchData.bind(this);
   }
 
   componentDidMount() {
@@ -69,10 +69,11 @@ class List extends Component {
               {this.state.products.map(card =>
                   (<CardCol key={card.id}>
                     <Card
-                      to={`${this.state.url}/${card.id}`}
-                      src={imageLink(card.images[0].id, card.images[0].fileName)}
+                      isSale={card.isSale}
+                      to={`${this.props.match.url}/${card.id}`}
+                      src={imageLink(card.images[0].id, card.images[0].fileName, 512)}
                       alt={card.title}
-                      price={card.price / 100}
+                      price={`$${card.price / 100}`}
                     />
                   </CardCol>),
                 )}
