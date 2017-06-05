@@ -53,6 +53,10 @@ export const Wrapper = styled.div`
   flex-direction: row-reverse;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 20px;
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
   @media only screen and (min-width: 992px) {
     flex-direction: row;
   }

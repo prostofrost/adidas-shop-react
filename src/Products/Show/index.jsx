@@ -16,7 +16,6 @@ class Details extends Component {
     super(props);
     this.state = { product: {}, selectedColorIndex: 0 };
     this.handleChangeColor = this.handleChangeColor.bind(this);
-    this.fetchData = this.fetchData.bind(this);
   }
 
   componentDidMount() {
@@ -53,7 +52,7 @@ class Details extends Component {
           </Price>
         </Sets>
 
-        <Gallery />
+        <Gallery images={card.images} />
         <Description>{card.description}</Description>
         <BuyBtn />
       </Product>
