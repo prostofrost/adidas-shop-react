@@ -24,9 +24,9 @@ class Details extends Component {
 
   fetchData(props) {
     const { section, category, id } = props.match.params;
-    fetch(`${apiLink()}/products/${section}/${category}/${id}`)
+    fetch(`${apiLink}v1/products/${section}/${category}/${id}`)
       .then(response => response.json())
-      .then(data => this.setState({ product: data }));
+      .then(product => this.setState({ product }));
   }
 
   handleChangeColor(selectedColorIndex) {
@@ -34,26 +34,26 @@ class Details extends Component {
   }
 
   render() {
-    const card = this.state.product;
+    const product = this.state.product;
     return (
       <Product>
         <Info>
-          <Title>{card.title}</Title>
+          <Title>{product.title}</Title>
           <SaveBtn color={colors[this.state.selectedColorIndex]}>save</SaveBtn>
         </Info>
 
         <Sets>
           <Wrapper>
             <Colors colors={colors} onChange={this.handleChangeColor} />
-            <Label isSale={card.sale} />
+            <Label isSale={product.sale} />
           </Wrapper>
           <Price color={colors[this.state.selectedColorIndex]}>
-            {`$${card.price / 100}`}
+            {`$${product.price / 100}`}
           </Price>
         </Sets>
 
-        <Gallery images={card.images} />
-        <Description>{card.description}</Description>
+        <Gallery images={product.images} />
+        <Description>{product.description}</Description>
         <BuyBtn />
       </Product>
     );

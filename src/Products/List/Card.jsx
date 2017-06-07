@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   right: 16px;
 `;
 
-const Price = styled(Link)`
+const Price = styled(Link) `
   width: 100%;
   text-align: center;
   background: #fff;

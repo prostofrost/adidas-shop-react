@@ -34,12 +34,10 @@ const Loading = styled.div`
   color: #d6d6d6;
 `;
 
-const CardCol = ({ children }) => <Col xs={12} sm={6} lg={4}>{children}</Col>;
-
 class List extends Component {
   constructor(props) {
     super(props);
-    this.state = { products: [], fetching: true };
+    this.state = { products: [], isFetching: true };
   }
 
   componentDidMount() {
@@ -52,31 +50,32 @@ class List extends Component {
 
   fetchData(props) {
     const { section, category } = props.match.params;
-    fetch(`${apiLink()}/products/${section}/${category}`)
+    fetch(`${apiLink}v1/products/${section}/${category}`)
       .then(response => response.json())
-      .then(data => this.setState({ products: data.items, fetching: false }));
+      .then(data => this.setState({ products: data.items, isFetching: false }));
   }
 
   render() {
-    const { fetching } = this.state;
+    const CardCol = ({ children }) => <Col xs={12} sm={6} lg={4}>{children}</Col>;
+    const { isFetching } = this.state;
     return (
       <Wrapper>
         <Filters />
-        {fetching
+        {isFetching
           ? <Loading>Loading...</Loading>
           : <ListWrapper>
             <Row>
               {this.state.products.map(card =>
-                  (<CardCol key={card.id}>
-                    <Card
-                      isSale={card.isSale}
-                      to={`${this.props.match.url}/${card.id}`}
-                      src={imageLink(card.images[0].id, card.images[0].fileName, 512)}
-                      alt={card.title}
-                      price={`$${card.price / 100}`}
-                    />
-                  </CardCol>),
-                )}
+                (<CardCol key={card.id}>
+                  <Card
+                    isSale={card.isSale}
+                    to={`${this.props.match.url}/${card.id}`}
+                    src={imageLink(card.images[0].id, card.images[0].fileName, 512)}
+                    alt={card.title}
+                    price={`$${card.price / 100}`}
+                  />
+                </CardCol>),
+              )}
             </Row>
           </ListWrapper>}
       </Wrapper>
