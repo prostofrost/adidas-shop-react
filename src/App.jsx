@@ -20,17 +20,16 @@ const Wrapper = styled.section`
   }
 `;
 
-export default () => (
-  <Router>
+export default () =>
+  (<Router>
     <Layout>
       <Sidebar />
       <Wrapper>
         <Switch>
-          <Route path="/products/:section/:category" component={List} />
-          <Route path="/products/:id" component={Show} />
-          <Redirect from="/" to="/products/football/shoes" />
+          <Route exact path="/products/:section/:category" component={List} />
+          <Route path="/products/:section/:category/:id" component={Show} />
+          <Redirect from="/" to="/products/football/cleats" />
         </Switch>
       </Wrapper>
     </Layout>
-  </Router>
-);
+  </Router>);

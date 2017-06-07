@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 import Thumbs from './Thumbs';
 
+import imageLink from '../../../constants/imageLink';
+
 const Wrapper = styled.div`
   margin-top: 0;
   @media only screen and (min-width: 992px) {
@@ -24,34 +26,6 @@ const BigImg = styled.img`
   max-width: 100%;
 `;
 
-const images = [
-  {
-    id: 1,
-    src: require('../../List/shoes-1@3x.jpg'),
-    alt: 'Utra Boost first',
-  },
-  {
-    id: 2,
-    src: require('../../List/shoes-2@3x.jpg'),
-    alt: 'Utra Boost second',
-  },
-  {
-    id: 3,
-    src: require('../../List/shoes-3@3x.jpg'),
-    alt: 'Utra Boost third',
-  },
-  {
-    id: 4,
-    src: require('../../List/shoes-1@3x.jpg'),
-    alt: 'Utra Boost fouth',
-  },
-  {
-    id: 5,
-    src: require('../../List/shoes-2@3x.jpg'),
-    alt: 'Utra Boost fifth',
-  },
-];
-
 class Gallery extends Component {
   constructor(props) {
     super(props);
@@ -64,19 +38,20 @@ class Gallery extends Component {
   }
 
   render() {
+    const images = this.props.images;
+    const index = this.state.selectedImageIndex;
     return (
       <Wrapper>
-        <ImgWrap>
-          <BigImg
-            src={images[this.state.selectedImageIndex].src}
-            alt={images[this.state.selectedImageIndex].alt}
-          />
-        </ImgWrap>
-        <Thumbs
-          images={images}
-          onClick={this.handleChangeImage}
-          selectedImageIndex={this.state.selectedImageIndex}
-        />
+        {images &&
+          <div>
+            <ImgWrap>
+              <BigImg
+                src={imageLink(images[index].id, images[index].fileName, 1024)}
+                alt={images[index].fileName}
+              />
+            </ImgWrap>
+            <Thumbs images={images} onClick={this.handleChangeImage} selectedImageIndex={index} />
+          </div>}
       </Wrapper>
     );
   }

@@ -2,17 +2,20 @@ import React from 'react';
 
 import styled from 'styled-components';
 
+import imageLink from '../../../constants/imageLink';
+
 const Thumbnails = styled.div`
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: flex-start;
+  overflow-x: auto;
   @media only screen and (min-width: 768px) {
-    padding: 0 20px;
-    justify-content: space-between;
+    padding: 5px;
+    justify-content: flex-start;
   }
-  @media only screen and (min-width: 1200px) {
-    padding: 0 80px;
+  @media only screen and (min-width: 992px) {
+    padding: 5px 30px;
   }
 `;
 
@@ -22,29 +25,31 @@ const Thumb = styled.div`
   margin-right: 10px;
   flex: 0 0 17%;
   cursor: pointer;
-  outline: 5px solid #fff;
+  border: 5px solid transparent;
   transition: all 0.3s ease;
-  > img {
-    width: 100%;
+  @media only screen and (min-width: 992px) {
+    margin-right: 30px;
   }
   &:hover {
-    outline: 5px solid #e5e5e7;
+    border: 5px solid #e5e5e7;
   }
-  ${props => props.isActive && `
-    outline: 5px solid #e5e5e7;
+  ${props =>
+    props.isActive &&
+    `
+    border: 5px solid #e5e5e7;
   `};
 `;
 
-export default props => (
-  <Thumbnails>
-    {props.images.map((image, index) => (
-      <Thumb
-        key={image.id}
-        onClick={() => props.onClick(index)}
-        isActive={index === props.selectedImageIndex}
-      >
-        <img src={image.src} alt={image.alt} />
-      </Thumb>
-    ))}
-  </Thumbnails>
-);
+const Img = styled.img`
+  width: 100%;
+  display: block;
+`;
+
+export default props =>
+  (<Thumbnails>
+    {props.images.map((image, index) =>
+      (<Thumb onClick={() => props.onClick(index)} isActive={index === props.selectedImageIndex}>
+        <Img src={imageLink(image.id, image.fileName, 128)} alt={image.id} />
+      </Thumb>),
+    )}
+  </Thumbnails>);
