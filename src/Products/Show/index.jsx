@@ -8,7 +8,7 @@ import Price from '../../components/Price';
 
 import { Product, Info, Title, Sets, Wrapper, StPrice, Description, SaveBtn } from './styled';
 
-import apiLink from '../../constants/apiLink';
+import { get } from '../../api';
 
 const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#77d9e8'];
 
@@ -25,8 +25,7 @@ class Details extends Component {
 
   fetchData(props) {
     const { section, category, id } = props.match.params;
-    fetch(`${apiLink}v1/products/${section}/${category}/${id}`)
-      .then(response => response.json())
+    get(`v1/products/${section}/${category}/${id}`)
       .then(product => this.setState({ product }));
   }
 

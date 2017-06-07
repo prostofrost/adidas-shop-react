@@ -7,7 +7,7 @@ import Filters from './Filters';
 import Card from './Card';
 
 import imageLink from '../../constants/imageLink';
-import apiLink from '../../constants/apiLink';
+import { get } from '../../api';
 
 const Wrapper = styled.div`
   margin-top: 5em;
@@ -34,6 +34,8 @@ const Loading = styled.div`
   color: #d6d6d6;
 `;
 
+const CardCol = ({ children }) => <Col xs={12} sm={6} lg={4}>{children}</Col>;
+
 class List extends Component {
   constructor(props) {
     super(props);
@@ -50,13 +52,11 @@ class List extends Component {
 
   fetchData(props) {
     const { section, category } = props.match.params;
-    fetch(`${apiLink}v1/products/${section}/${category}`)
-      .then(response => response.json())
+    get(`v1/products/${section}/${category}`)
       .then(data => this.setState({ products: data.items, isFetching: false }));
   }
 
   render() {
-    const CardCol = ({ children }) => <Col xs={12} sm={6} lg={4}>{children}</Col>;
     const { isFetching } = this.state;
     return (
       <Wrapper>
