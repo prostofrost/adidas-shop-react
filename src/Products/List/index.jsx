@@ -72,7 +72,8 @@ class List extends Component {
                     to={`${this.props.match.url}/${card.id}`}
                     src={imageLink(card.images[0].id, card.images[0].fileName, 512)}
                     alt={card.title}
-                    price={`$${card.price / 100}`}
+                    price={card.price}
+                    currency={card.currency}
                   />
                 </CardCol>),
               )}

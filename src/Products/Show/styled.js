@@ -62,7 +62,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Price = styled.h2`
+export const StPrice = styled.h2`
   font-size: 70px;
   margin: 0 0 10px;
   color: ${props => props.color};

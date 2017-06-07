@@ -4,8 +4,9 @@ import Colors from './Colors';
 import Label from '../../components/Label';
 import Gallery from './Gallery';
 import BuyBtn from './BuyBtn';
+import Price from '../../components/Price';
 
-import { Product, Info, Title, Sets, Wrapper, Price, Description, SaveBtn } from './styled';
+import { Product, Info, Title, Sets, Wrapper, StPrice, Description, SaveBtn } from './styled';
 
 import apiLink from '../../constants/apiLink';
 
@@ -47,9 +48,10 @@ class Details extends Component {
             <Colors colors={colors} onChange={this.handleChangeColor} />
             <Label isSale={product.sale} />
           </Wrapper>
-          <Price color={colors[this.state.selectedColorIndex]}>
-            {`$${product.price / 100}`}
-          </Price>
+          <StPrice color={colors[this.state.selectedColorIndex]}>
+            <Price currency={product.currency}>{product.price}</Price>
+          </StPrice>
+
         </Sets>
 
         <Gallery images={product.images} />

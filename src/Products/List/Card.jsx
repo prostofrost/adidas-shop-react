@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Label from '../../components/Label';
+import Price from '../../components/Price';
 
 const Card = styled.div`
   position: relative;
@@ -22,7 +23,7 @@ const Wrapper = styled.div`
   right: 16px;
 `;
 
-const Price = styled(Link) `
+const PriceLink = styled(Link) `
   width: 100%;
   text-align: center;
   background: #fff;
@@ -48,5 +49,7 @@ export default props =>
   (<Card>
     {props.isSale && <Wrapper><Label /></Wrapper>}
     <img src={props.src} alt={props.alt} />
-    <Price isSale={props.isSale} to={props.to}>{props.price}</Price>
+    <PriceLink isSale={props.isSale} to={props.to}>
+      <Price currency={props.currency}>{props.price}</Price>
+    </PriceLink>
   </Card>);
