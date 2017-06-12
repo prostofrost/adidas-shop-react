@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Icon from './search.svg';
 
 const Form = styled.form`
   display: none;
@@ -24,7 +23,6 @@ const Input = styled.input`
   padding: 0 0 10px 55px;
   width: 100%;
   box-sizing: border-box;
-  background: url(${Icon}) 10px 0 no-repeat;
   transition: all 0.3s ease;
   &:focus {
     border-color: #dcdcdc;

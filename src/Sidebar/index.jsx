@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import React from 'react';
 import Logo from './Logo';
-import Search from './Search';
 import Nav from './Nav';
+
 
 const Sidebar = styled.aside`
   position: fixed;
@@ -27,7 +27,6 @@ const Sidebar = styled.aside`
 export default () => (
   <Sidebar>
     <Logo />
-    <Search />
     <Nav />
   </Sidebar>
 );
