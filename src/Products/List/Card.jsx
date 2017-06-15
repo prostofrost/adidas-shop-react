@@ -23,6 +23,11 @@ const Wrapper = styled.div`
   right: 16px;
 `;
 
+const Title = styled.h2`
+  font-size: 16px;
+  color: #404040;
+`;
+
 const PriceLink = styled(Link) `
   width: 100%;
   text-align: center;
@@ -34,7 +39,7 @@ const PriceLink = styled(Link) `
   text-decoration: none;
   padding: 20px 0;
   background-image: ${props => (props.isSale ? 'linear-gradient(17deg, #0c09bf, #966dd8)' : 'none')};
-  color: ${props => (props.isSale ? '#fff' : '#111')};
+  color: ${props => (props.isSale ? '#fff' : '#404040')};
   @media only screen and (min-width: 380px) {
     font-size: 30px;
     padding: 25px 0;
@@ -48,6 +53,7 @@ const PriceLink = styled(Link) `
 export default props =>
   (<Card>
     {props.isSale && <Wrapper><Label /></Wrapper>}
+    <Title>{props.title}</Title>
     <img src={props.src} alt={props.alt} />
     <PriceLink isSale={props.isSale} to={props.to}>
       <Price currency={props.currency}>{props.price}</Price>

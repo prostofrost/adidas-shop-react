@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   @media only screen and (min-width: 768px) {
-    margin-bottom: 40px;
+    margin-bottom: 200px;
   }
 `;
 
